@@ -4,12 +4,48 @@ body {
     margin: 0;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
+/* ---------- GLOBAL ANIMATED UNDERLINE FOR ALL LINKS ---------- */
 a {
+    position: relative;
+    color: inherit;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* adjust distance */
+    width: 0%;
+    height: 2px;
+    /* thickness */
+    background-color: currentColor;
+    /* matches link text color */
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Disable underline animation for privacy buttons */
+.privacy-btn::after {
+    display: none !important;
+}
+
+.privacy-btn:hover::after {
+    display: none !important;
+}
+
+/* Keep button hover behavior clean */
+.privacy-btn,
+.privacy-btn:hover {
+    text-decoration: none !important;
 }
 
 /* ---------- NAVBAR ---------- */
@@ -118,13 +154,53 @@ a:hover {
     font-weight: 500;
     border: none;
     white-space: nowrap;
+
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); /* start with no ring */
+    transition: box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
 .privacy-btn:hover {
     color: #ffffff;
     opacity: 0.9;
     text-decoration: none;
+    box-shadow: 0 0 0 10px #ffffff; /* 10px white capsule around it */
 }
+
+.privacy-btn::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -16px;
+    right: -16px;
+    border-radius: 999px;
+    background: #ffffff;
+
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    z-index: -1;
+    /* Behind the button now safely */
+}
+
+
+
+/* Disable global underline animation on these pill buttons */
+.privacy-btn::after {
+    display: none !important;
+}
+
+
+.privacy-btn,
+.privacy-btn:hover {
+    text-decoration: none !important;
+}
+
+
+
 
 @media (max-width: 991.98px) {
     .privacy-pill {
