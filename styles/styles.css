@@ -248,17 +248,42 @@ footer {
     color: #cccccc;
 }
 
-.contributors-eyebrow {
-    font-size: 0.9rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: 700;
-}
+/* ---------- CONTRIBUTORS PAGE UPGRADES ---------- */
 
+/* Make avatar images significantly bigger */
 .contributor-img {
-    max-width: 260px;
+  max-width: 330px;          /* was 260px */
+  transition: transform 0.6s ease;   /* slower hover */
 }
 
-.contributor-panel {
-    border-radius: 24px;
+/* Smooth zoom on hover */
+.contributor-img:hover {
+  transform: scale(1.08);    /* subtle, elegant zoom */
 }
+
+/* Bigger black info panel */
+.contributor-panel {
+  border-radius: 24px;
+  padding: 1.75rem 2rem;       /* bigger spacing */
+  font-size: 1.15rem;          /* slightly larger text */
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Hover interaction for the panel */
+.contributor-panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+
+/* Increase vertical spacing between rows */
+#contributors-grid .col-12 {
+  margin-bottom: 3rem;
+}
+
+/* Ensure the whole card feels like one unit */
+.contributor-card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
