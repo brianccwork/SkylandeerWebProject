@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Skylandeer",
+    "role": "NA Pricing, Data, Design, Coding",
+    "image": "../images/contributors/SkylanDeer.avif"
+  },
+  {
+    "name": "SpyroStudios",
+    "role": "Coding, Design, Documentation",
+    "image": "../images/contributors/SpyroStudios.avif"
+  },
+  {
+    "name": "Djdigby",
+    "role": "UK Pricing",
+    "image": "../images/contributors/DjDigby.avif"
+  },
+  {
+    "name": "Rubyjrdx",
+    "role": "EU Pricing",
+    "image": "../images/contributors/Ruby.avif"
+  },
+  {
+    "name": "Prongobbles",
+    "role": "AU Pricing",
+    "image": "../images/contributors/Prongobbles.avif"
+  },
+  {
+    "name": "Don't forget to check out",
+    "role": "the LEGO Dimensions sheet!",
+    "image": "../images/contributors/SkylanDeermensions.avif"
+  }
+]

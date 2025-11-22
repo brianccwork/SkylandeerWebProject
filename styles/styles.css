@@ -1,0 +1,188 @@
+/* ---------- GLOBAL ---------- */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- NAVBAR ---------- */
+.sky-navbar {
+    background: url("../images/backgrounds/GrayElements.avif") center/cover no-repeat;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+
+.sky-navbar .navbar-brand {
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.sky-navbar .nav-link {
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #111111 !important;
+    padding-bottom: 4px;
+    margin: 0 18px;
+}
+
+.sky-navbar .nav-link.active {
+    border-bottom: 2px solid #111111;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* ---------- HERO (MAIN BODY 1) ---------- */
+.hero-section {
+    background: linear-gradient(135deg, #1a4e36 0%, #327773 45%, #5ca0c3 100%);
+    padding: 5rem 0 3.5rem;
+    color: #ffffff;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.tracker-card {
+    max-width: 900px;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+.tracker-card img {
+    width: 100%;
+    display: block;
+}
+
+/* ---------- PRIVACY STRIP (MAIN BODY 2) ---------- */
+.privacy-section {
+    background: linear-gradient(135deg, #0c7ad9 0%, #13a0ff 60%, #48bbff 100%);
+    padding: 3.5rem 0;
+    color: #ffffff;
+}
+
+.privacy-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.privacy-pill {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 40px;
+    padding: 1.8rem 3rem;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+    white-space: normal;
+}
+
+.privacy-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.privacy-btn {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.85rem 2.6rem;
+    font-weight: 500;
+    border: none;
+    white-space: nowrap;
+}
+
+.privacy-btn:hover {
+    color: #ffffff;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+@media (max-width: 991.98px) {
+    .privacy-pill {
+        text-align: center;
+        padding-inline: 2rem;
+    }
+
+    .privacy-buttons {
+        justify-content: center;
+        margin-left: 0;
+    }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #050505;
+    color: #ffffff;
+    padding: 2.5rem 0 1.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.footer-link {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.footer-link:hover {
+    color: #e5e5e5;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333333;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #cccccc;
+}
+
+.contributors-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.contributor-img {
+    max-width: 260px;
+}
+
+.contributor-panel {
+    border-radius: 24px;
+}
