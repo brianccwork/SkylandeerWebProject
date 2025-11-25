@@ -306,14 +306,21 @@ footer {
 
 /* Same feel as tracker-card, but separate class for clarity */
 .lego-card {
-  max-width: 900px;
-  width: 100%;
-  margin-inline: auto;
-  margin-top: 2.5rem;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    background: radial-gradient(
+        circle,
+        rgb(135, 71, 158) 0%,
+        rgb(86, 34, 108) 45%,
+        rgb(52, 13, 66) 100%
+    );
+    max-width: 900px;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.82);
 }
+
 
 .lego-card img {
   width: 100%;
