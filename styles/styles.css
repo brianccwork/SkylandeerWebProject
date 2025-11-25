@@ -1,15 +1,12 @@
-/* ---------- GLOBAL ---------- */
+/* ---------------- GLOBAL ---------------- */
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   margin: 0;
 }
 
-a:hover {
-  text-decoration: none !important;
-}
-
-/* ---------- GLOBAL ANIMATED UNDERLINE FOR ALL LINKS ---------- */
+/* Animated underline for most links */
 a {
   position: relative;
   color: inherit;
@@ -20,10 +17,10 @@ a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px; /* adjust distance */
+  bottom: -2px;
   width: 0%;
-  height: 2px; /* thickness */
-  background-color: currentColor; /* matches link text color */
+  height: 2px;
+  background-color: currentColor;
   transition: width 0.3s ease;
 }
 
@@ -31,22 +28,28 @@ a:hover::after {
   width: 100%;
 }
 
-/* Disable underline animation for privacy buttons */
-.privacy-btn::after {
+/* Turn OFF animated underline for specific buttons/links */
+.privacy-btn::after,
+.hero-square-btn::after,
+.lego-card a::after,
+.contributor-card-link::after {
   display: none !important;
 }
 
-.privacy-btn:hover::after {
-  display: none !important;
-}
-
-/* Keep button hover behavior clean */
+/* Keep button/link hover behavior clean */
 .privacy-btn,
-.privacy-btn:hover {
+.privacy-btn:hover,
+.hero-square-btn,
+.hero-square-btn:hover,
+.lego-card a,
+.lego-card a:hover,
+.contributor-card-link,
+.contributor-card-link:hover {
   text-decoration: none !important;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ---------------- NAVBAR ---------------- */
+
 .sky-navbar {
   background: url("../images/backgrounds/GrayElements.avif") center/cover
     no-repeat;
@@ -54,6 +57,9 @@ a:hover::after {
   height: 90px;
   display: flex;
   align-items: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
 }
 
 .sky-navbar .navbar-brand {
@@ -81,7 +87,8 @@ a:hover::after {
   border: none;
 }
 
-/* ---------- HERO (MAIN BODY 1) ---------- */
+/* ---------------- HERO ---------------- */
+
 .hero-section {
   background: linear-gradient(135deg, #1a4e36 0%, #327773 45%, #5ca0c3 100%);
   padding: 5rem 0 3.5rem;
@@ -96,6 +103,47 @@ a:hover::after {
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
 }
 
+/* Title + button row */
+.hero-heading-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 17rem;
+}
+
+.hero-heading-wrap h1 {
+  flex: 0 1 auto;
+  margin: 0;
+}
+
+/* Chunky hero button */
+.hero-square-btn {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  font-size: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 2.8rem;
+  height: 72px;
+  border-radius: 28px;
+
+  white-space: nowrap;
+
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.hero-square-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Tracker thumbnail card (home) */
 .tracker-card {
   max-width: 900px;
   width: 100%;
@@ -111,57 +159,33 @@ a:hover::after {
   display: block;
 }
 
-/* ---------- HERO BUTTON (Chunky Rounded Square) ---------- */
-.hero-square-btn {
-  background: #ffffff;
-  color: #000000;
-  font-weight: 800;
-  font-size: 1.25rem;
+/* ---------------- LEGO CARD (Extras page) ---------------- */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0 2.8rem;      /* wider */
-  height: 72px;           /* tall + chunky */
-  border-radius: 28px;    /* thick rounded-square look */
-
-  text-decoration: none !important;
-  white-space: nowrap;
-
-  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.32);
-  transition: transform 0.25s ease,
-              box-shadow 0.25s ease,
-              opacity 0.25s ease;
+.lego-card {
+  background: radial-gradient(
+    circle,
+    rgb(135, 71, 158) 0%,
+    rgb(86, 34, 108) 45%,
+    rgb(52, 13, 66) 100%
+  );
+  max-width: 900px;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 2.5rem;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.82);
+  padding: 1rem;
 }
 
-/* Hover */
-.hero-square-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+.lego-card img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
 }
 
-/* Remove underline effect */
-.hero-square-btn::after {
-  display: none !important;
-}
+/* ---------------- PRIVACY STRIP ---------------- */
 
-/* Title + button row */
-.hero-heading-wrap {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;  /* keep them on one line on desktop */
-  gap: 17rem;         /* your chosen spacing */
-}
-
-/* Make the title shrink so the button sits nicely beside it */
-.hero-heading-wrap h1 {
-  flex: 0 1 auto;
-  margin: 0;
-}
-
-/* ---------- PRIVACY STRIP (MAIN BODY 2) ---------- */
 .privacy-section {
   background: linear-gradient(135deg, #0c7ad9 0%, #13a0ff 60%, #48bbff 100%);
   padding: 3.5rem 0;
@@ -204,38 +228,33 @@ a:hover::after {
   white-space: nowrap;
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); /* start with no ring */
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   transition: box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
 .privacy-btn:hover {
   color: #ffffff;
   opacity: 0.9;
-  text-decoration: none;
-  box-shadow: 0 0 0 10px #ffffff; /* 10px white capsule around it */
+  box-shadow: 0 0 0 10px #ffffff;
 }
 
-.privacy-btn::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bottom: -10px;
-  left: -16px;
-  right: -16px;
-  border-radius: 999px;
-  background: #ffffff;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: -1; /* Behind the button now safely */
+/* Background image behind privacy strip */
+.blue-back {
+  box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------------- FOOTER ---------------- */
+
 footer {
   background: #050505;
   color: #ffffff;
   padding: 2.5rem 0 1.5rem;
   font-size: 0.95rem;
+  box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
 }
 
 .footer-title {
@@ -264,134 +283,49 @@ footer {
   color: #cccccc;
 }
 
+/* ---------------- CONTRIBUTORS PAGE ---------------- */
 
-/* Shadow below navbar */
-.sky-navbar {
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 10; /* ensures shadow sits above hero */
-}
+/* These classes are used by the injected HTML from contributors.js */
 
-/* Shadow above footer */
-footer {
-  box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 10; /* footer stays above content */
-}
-
-.blue-back {
-    box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 10;
-}
-
-
-/* ---------- CONTRIBUTORS PAGE UPGRADES ---------- */
-
-/* Make avatar images significantly bigger */
 .contributor-img {
-  max-width: 330px; /* was 260px */
-  transition: transform 0.6s ease; /* slower hover */
+  max-width: 330px;
+  transition: transform 0.6s ease;
 }
 
-/* Smooth zoom on hover */
 .contributor-img:hover {
-  transform: scale(1.08); /* subtle, elegant zoom */
+  transform: scale(1.08);
 }
 
-/* Bigger black info panel (matches JS: .contributor-info) */
 .contributor-info {
   border-radius: 24px;
-  padding: 1.75rem 2rem; /* bigger spacing */
-  font-size: 1.15rem;    /* slightly larger text */
+  padding: 1.75rem 2rem;
+  font-size: 1.15rem;
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* Hover interaction for the panel */
 .contributor-info:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
 
-/* Increase vertical spacing between rows */
 #contributors-grid .col-12 {
   margin-bottom: 3rem;
 }
 
-/* Ensure the whole card feels like one unit */
 .contributor-card-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Make the whole card-link clean (no underline, no color change) */
 .contributor-card-link {
-  text-decoration: none;
   color: inherit;
 }
 
-/* Disable global underline animation on contributor card links */
-.contributor-card-link::after {
-  display: none !important;
-}
+/* ---------------- RESPONSIVE ---------------- */
 
-.contributor-card-link:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ---------- LEGO DIMENSIONS SECTION (MATCH HERO) ---------- */
-.lego-section {
-  background: linear-gradient(135deg, #1a4e36 0%, #327773 45%, #5ca0c3 100%);
-  padding: 5rem 0 3.5rem;
-  color: #ffffff;
-}
-
-.lego-title {
-  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
-  font-weight: 900;
-  letter-spacing: 0.03em;
-  line-height: 1.05;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-}
-
-/* Same feel as tracker-card, but with inner glow gradient */
-.lego-card {
-  background: radial-gradient(
-    circle,
-    rgb(135, 71, 158) 0%,
-    rgb(86, 34, 108) 45%,
-    rgb(52, 13, 66) 100%
-  );
-  max-width: 900px;
-  width: 100%;
-  margin-inline: auto;
-  margin-top: 2.5rem;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.82);
-  padding: 1rem; /* so gradient is visible around the image */
-}
-
-.lego-card img {
-  width: 100%;
-  display: block;
-  border-radius: 20px;
-}
-
-/* Disable global underline animation for the LEGO card link */
-.lego-card a::after {
-  display: none !important;
-}
-
-.lego-card a:hover::after {
-  display: none !important;
-}
-
-/* ---------- NAVBAR + PRIVACY: MOBILE FIXES ---------- */
 @media (max-width: 991.98px) {
-  /* NAVBAR */
+  /* Navbar collapse background */
   .sky-navbar {
     height: auto;
     padding-block: 0.5rem;
@@ -410,7 +344,7 @@ footer {
     margin: 0.25rem 0;
   }
 
-  /* PRIVACY STRIP LAYOUT ON MOBILE */
+  /* Privacy layout on mobile */
   .privacy-row {
     flex-direction: column;
     align-items: center;
@@ -432,13 +366,13 @@ footer {
 
   .privacy-btn {
     width: 100%;
-    max-width: 320px; /* so they don’t get too huge */
+    max-width: 320px;
     text-align: center;
   }
 }
 
-/* ---------- HERO MOBILE STACK ---------- */
 @media (max-width: 767px) {
+  /* Stack hero heading + button */
   .hero-heading-wrap {
     flex-direction: column;
     align-items: flex-start;
