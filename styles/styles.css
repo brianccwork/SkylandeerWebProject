@@ -272,7 +272,7 @@ footer {
 
 .footer-link:hover {
   color: #e5e5e5;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer-bottom {
