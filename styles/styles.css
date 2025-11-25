@@ -308,6 +308,16 @@ footer {
   border-radius: 20px;
 }
 
+/* Disable global underline animation for the LEGO card link */
+.lego-card a::after {
+  display: none !important;
+}
+
+.lego-card a:hover::after {
+  display: none !important;
+}
+
+
 /* ---------- NAVBAR + PRIVACY: MOBILE FIXES ---------- */
 @media (max-width: 991.98px) {
   /* NAVBAR */
